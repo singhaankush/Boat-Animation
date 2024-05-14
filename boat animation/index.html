@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .bg{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-image: url(background.jpg);
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+    .ocean{
+        position: absolute;
+        height: 220px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+    }
+    .water{
+        position: absolute;
+        height: 100%;
+        right: 0;
+    }
+    .boat{
+        position: absolute;
+        width: 350px;
+        bottom: 200px;
+        transform: translateX(-50%);
+        left: 50%;
+        
+    }
+    .boat img{
+        width: 100%;
+        -webkit-box-reflect: below 0  linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.6) );
+    }
+    .cloud{
+        height: 250px;
+        position: absolute;
+        right: 0;
+        animation: cloud 20s linear infinite;
+    }
+    @keyframes cloud {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+             transform: translateX(600px);
+        }
+    }
+    .water{
+        animation: water 20s linear infinite;
+    }
+    @keyframes water {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+             transform: translateX(600px);
+        }
+    }
+
+    @keyframes boat {
+        0%{
+            transform: rotate(0);
+        }
+        25%{
+            transform: rotate(-1);
+
+        }  
+         50%{
+            transform: rotate(0);
+        }
+           75%{
+            transform: rotate(1);
+        }
+        100%{
+             transform: rotate(0);
+        }
+    }
+    .as{
+        animation: boat 3s linear infinite;
+    }
+    @keyframes boat{
+        0%{
+            transform:rotateZ(0deg);
+        }
+        25%{
+            transform:rotateZ(-3deg);
+        }
+        50%{
+            transform:rotateZ(0deg);
+        }
+        75%{transform:rotateZ(3deg);
+        }
+        100%{transform:rotateZ(0deg);}
+        }
+</style>
+<body>
+    <div class="bg">
+        <img src="cloud.png" class="cloud">
+        <div class="ocean">
+            <img src="water.png" class="water">
+            <div class="boat">
+                <img src="boat.png" class="as">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
